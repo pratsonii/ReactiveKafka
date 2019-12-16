@@ -1,0 +1,25 @@
+<nz-card class="header">
+  <h1>Reactive Kafka Websocket using Springboot</h1>
+</nz-card>
+
+<nz-card class="table">
+  <button nz-button [nzType]="buttonType" (click)="onButtonClick()">{{buttonTitle}}</button>
+  <nz-alert nzType="info" [nzMessage]="tableTitle"></nz-alert>
+  <div *ngFor="let item of displayMessages">
+    <div nz-row>
+      <div nz-col nzSpan="10" class="weatherInfo">
+        <h3>{{item.city}}</h3>
+      </div>
+
+      <div nz-col nzSpan="14">
+        <h3><span>
+            <nz-divider nzType="vertical"></nz-divider>
+          </span>{{item.temperature}} °C</h3>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #tableTitle>
+    <h3>Weather<span> (updates every 5 seconds)
+      </span></h3>
+  </ng-template>
